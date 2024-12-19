@@ -39,6 +39,19 @@ def cadastrar_novo_restaurante():
     
     voltar_ao_menu_principal()
 
+def listar_restaurantes():
+    exibir_subtitulo('Listando restaurantes')
+    titulo = f'{'Nome'.ljust(20)} | {'Categoria'.ljust(20)} | {'Status'}'
+
+    print(titulo)
+    print('-' * len(titulo))
+    for restaurante in restaurantes:
+        nome_restaurante = restaurante['nome']
+        categoria = restaurante['categoria']
+        ativo = restaurante['ativo']
+        print(f'{nome_restaurante.ljust(20)} | {categoria.ljust(20)} | {ativo}')
+
+    voltar_ao_menu_principal()
 
 def escolher_opcao():
     try:
@@ -48,7 +61,7 @@ def escolher_opcao():
         if opcao_escolhida == 1: 
             cadastrar_novo_restaurante()
         elif opcao_escolhida == 2: 
-            print("Listar Restaurantes")
+            listar_restaurantes()
         elif opcao_escolhida == 3: 
             print('Ativar restaurante')
         elif opcao_escolhida == 4: 
