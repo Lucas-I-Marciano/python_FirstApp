@@ -16,7 +16,12 @@ def exibir_opcoes():
     print('3. Alternar estado restaurante')
     print('4. Sair\n')
 
-
+def exibir_subtitulo(texto):
+    os.system('cls')
+    print('*' * len(texto))
+    print(texto)
+    print('*' * len(texto))
+    print()
 
 
 def escolher_opcao():
@@ -25,7 +30,7 @@ def escolher_opcao():
         # opcao_escolhida = int(opcao_escolhida)
 
         if opcao_escolhida == 1: 
-            print("Cadastrar Restaurante")
+            exibir_subtitulo("Cadastrar Restaurante")
         elif opcao_escolhida == 2: 
             print("Listar Restaurantes")
         elif opcao_escolhida == 3: 
