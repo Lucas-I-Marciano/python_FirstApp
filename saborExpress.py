@@ -53,6 +53,9 @@ def listar_restaurantes():
 
     voltar_ao_menu_principal()
 
+def finalizar_app():
+    exibir_subtitulo('Finalizar app')
+
 def escolher_opcao():
     try:
         opcao_escolhida = int(input('Escolha uma opção: '))
@@ -65,7 +68,7 @@ def escolher_opcao():
         elif opcao_escolhida == 3: 
             print('Ativar restaurante')
         elif opcao_escolhida == 4: 
-            print("Finalizando")
+            finalizar_app()
         else: 
             opcao_invalida()
     except:
