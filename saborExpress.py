@@ -1,5 +1,12 @@
 import os
 
+restaurantes = [
+    {"nome" : "Kanpek", "categoria" : "japonesa", "ativo" : False},
+    {"nome" : "Habbibs", "categoria" : "arabe", "ativo" : False},
+    {"nome" : "União Marmitaria", "categoria" : "brasileira", "ativo" : False},
+    {"nome" : "Brooks", "categoria" : "lanche", "ativo" : True},
+]
+
 def exibir_nome_do_programa():
     print("""
 ░██████╗░█████╗░██████╗░░█████╗░██████╗░  ███████╗██╗░░██╗██████╗░██████╗░███████╗░██████╗░██████╗
@@ -23,6 +30,15 @@ def exibir_subtitulo(texto):
     print('*' * len(texto))
     print()
 
+def cadastrar_novo_restaurante():
+    exibir_subtitulo('Cadastro de novos restaurantes')
+    nome_do_restaurante = input('Digite o nome do restaurante que deseja cadastrar: ')
+    categoria = input(f"Digite a categoria do restaurante {nome_do_restaurante}: ")
+    restaurantes.append({"nome" : nome_do_restaurante, "categoria" : categoria, "ativo" : False})
+    print(f'O restaurante {nome_do_restaurante} foi cadastrado com sucesso!')
+    
+    voltar_ao_menu_principal()
+
 
 def escolher_opcao():
     try:
@@ -30,7 +46,7 @@ def escolher_opcao():
         # opcao_escolhida = int(opcao_escolhida)
 
         if opcao_escolhida == 1: 
-            exibir_subtitulo("Cadastrar Restaurante")
+            cadastrar_novo_restaurante()
         elif opcao_escolhida == 2: 
             print("Listar Restaurantes")
         elif opcao_escolhida == 3: 
